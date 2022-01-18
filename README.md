@@ -18,18 +18,18 @@ Entre las líneas 51-55 veras el contenido del dropdown, en la variable **value*
 ```
 <option value="Docker.sh">Instala Docker para el funcionamiento de los Scripts</option>
 ```
-**Cambiar**
+#### **Cambiar**
 En el caso en el que desee cambiar el documento a descargar se tendrá que dirigir a la carpeta **scripts** que se encuentra en la raís del proyecto y añadir lo que se desee descargar (una imagen otro archivo, script) y se cambiara en la línea el nombre del archivo añadido, ejemplo a continuación:
 
-**Ejemplo**
+#### *Ejemplo:*
 Se añade imagen y se desea descargar, esta se llama **icono.png**, por lo tanto, quedaría así:
 
 ```
 <option value="icono.png">Icono ejemplo</option>
 ```
-Y la descripción puede cambiar modificando el contenido después del **>** y antes del **<** como en el anterior ejemplo **Icono ejemplo** o en la primer linea de codigo donde dice **Instala Docker para el funcionamiento de los Scripts**
+Y la descripción puede cambiar modificando el contenido después del **>** y antes del **<** como en el anterior ejemplo **Icono ejemplo** o en el primer recuadro de codigo donde dice **Instala Docker para el funcionamiento de los Scripts**
 
-**Añadir**
+#### **Añadir**
 Si lo que quieres es añadir una nueva opción al dropdown (menú desplegabe), debes copiar otra línea como la siguiente:
 
 ```
@@ -37,7 +37,7 @@ Si lo que quieres es añadir una nueva opción al dropdown (menú desplegabe), d
 ```
 Y lo que debes hacer es añadir el archivo a la carpeta **scripts** que se encuentra en la raís del proyecto y volviendo a la línea copeada cambias el valor de value por el nombre del archivo, ejemplo a continuación:
 
-**Ejemplo**
+#### *Ejemplo:*
 Se añade archivo **tarea.pdf** a la carpeta **/scripts** y se desea añadir, por lo tanto, debes copear la línea de las opciones como a continuación:
 
 ```
@@ -53,4 +53,4 @@ En este caso se verá en el desplegable como la primera opción, ya que está ha
 
 ## Créditos
 
- **Jaqueline Garcia** & **Yatziri Amparo** - *Conocimientos de diseño de páginas* - [Jaqueline16](https://github.com/jaqueline16) [YatziEs224](https://github.com/yatziEs224)
+ **Jaqueline Garcia** & **Yatziri Amparo** - *Conocimientos de diseño de páginas* - [Jaqueline16](https://github.com/jaqueline16) & [YatziEs224](https://github.com/yatziEs224)
