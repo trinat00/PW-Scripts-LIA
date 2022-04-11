@@ -17,4 +17,4 @@ Introduzca en nombre de la variable 1<br>
 <INPUT TYPE="SUBMIT">
 </FORM>
 </BODY>
-</HTML
+</HTML>
