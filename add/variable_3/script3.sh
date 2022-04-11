@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo docker exec autolamp  mysql -uroot -e "CREATE USER 'ric'@'localhost' IDENTIFIED BY '1234';"
+sudo docker exec autolamp  mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'ric'@'localhost';"
+sudo docker exec autolamp  mysql -uroot -e "create database bd4"
+sudo docker exec autolamp  mysql -uroot -e "use bd4; CREATE TABLE tl7 ("id" int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT, var1 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL, "fecha" datetime NOT NULL DEFAULT CURRENT_TIMESTAMP);"
+echo "El nombre para el usuario es: ric"
+echo "La contraseña para el usuario es: 1234"
+echo "El nombre para la base de datos es: bd4"
+echo "El nombre para la tabla es: tl7"
+echo "El nombre de la variable 1 es : var1"
+echo "Puede entrar a PHPMYADMIN para ver la estructura y canmbiar la configuracion de la base de datos desde el siguiente enlace: http://localhost/phpmyadmin/"
