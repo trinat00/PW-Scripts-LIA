@@ -17,4 +17,7 @@ Introduzca en nombre de la variable 1<br>
 <INPUT TYPE="SUBMIT">
 </FORM>
 </BODY>
+</form><form action="../index.html">
+    <input type="submit" value="Volver al incio" />
+</form>
 </HTML
