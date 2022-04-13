@@ -1,0 +1,11 @@
+#!/bin/bash
+sudo docker exec autolamp  mysql -uroot -e "CREATE USER 'uziel'@'localhost' IDENTIFIED BY '1234';"
+sudo docker exec autolamp  mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO 'uziel'@'localhost';"
+sudo docker exec autolamp  mysql -uroot -e "create database cnc"
+sudo docker exec autolamp  mysql -uroot -e "use cnc; CREATE TABLE datos ("id" int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT, profundiad varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL, "fecha" datetime NOT NULL DEFAULT CURRENT_TIMESTAMP);"
+echo "El nombre para el usuario es: uziel"
+echo "La contraseña para el usuario es: 1234"
+echo "El nombre para la base de datos es: cnc"
+echo "El nombre para la tabla es: datos"
+echo "El nombre de la variable 1 es : profundiad"
+echo "Puede entrar a PHPMYADMIN para ver la estructura y canmbiar la configuracion de la base de datos desde el siguiente enlace: http://localhost/phpmyadmin/"
