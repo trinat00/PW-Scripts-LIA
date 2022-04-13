@@ -49,7 +49,7 @@ En este caso se verá en el desplegable como la primera opción, ya que está ha
 ## Autores
 
 * **Tristán Huerta** - *Sistema Web* - [trinat00](https://github.com/trinat00)
-* **Ricardo Gomez** - *Creación del script* - [Ricardo-Gomez-4-113](https://github.com/Ricardo-Gomez-4-113)
+* **Ricardo Gomez** - *Creación de los script* - [Ricardo-Gomez-4-113](https://github.com/Ricardo-Gomez-4-113)
 
 ## Créditos
 
