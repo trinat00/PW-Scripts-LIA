@@ -37,7 +37,7 @@ fwrite($file, "echo \"Puede entrar a PHPMYADMIN para ver la estructura y canmbia
 
 fclose($file);
 
-header("Content-disposition: attachment; filename=script1.sh");
+header("Content-disposition: attachment; filename=script2.sh");
 readfile("script2.sh");
 
 }

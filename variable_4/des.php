@@ -4,14 +4,14 @@ $userpass=$_POST["userpass"];
 $bdname=$_POST["bdname"];
 $tlname=$_POST["tlname"];
 $var1=$_POST["var1"];
-$var1=$_POST["var2"];
+$var2=$_POST["var2"];
 $var3=$_POST["var3"];
 $var4=$_POST["var4"];
-If (unlink('script1.sh')) 
+If (unlink('script4.sh')) 
 {
   // file was successfully deleted
  
-$file = fopen("script1.sh", "w");
+$file = fopen("script4.sh", "w");
 
 fwrite($file, "#!/bin/bash" . PHP_EOL);
 
@@ -21,7 +21,7 @@ fwrite($file, "sudo docker exec autolamp  mysql -uroot -e \"GRANT ALL PRIVILEGES
 
 fwrite($file, "sudo docker exec autolamp  mysql -uroot -e \"create database $bdname\"" . PHP_EOL);
 
-fwrite($file, "sudo docker exec autolamp  mysql -uroot -e \"use $bdname; CREATE TABLE $tlname (\"id\" int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,  $var1 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL,  $var2 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL, $var3 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL, $var4 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL,  \"fecha\" datetime NOT NULL DEFAULT CURRENT_TIMESTAMP);"" . PHP_EOL);
+fwrite($file, "sudo docker exec autolamp  mysql -uroot -e \"use $bdname; CREATE TABLE $tlname (\"id\" int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,  $var1 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL,  $var2 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL, $var3 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL, $var4 varchar(70) COLLATE utf8mb4_spanish_ci NOT NULL,  \"fecha\" datetime NOT NULL DEFAULT CURRENT_TIMESTAMP);\"" . PHP_EOL);
 
 fwrite($file, "echo \"El nombre para el usuario es: $username\"" . PHP_EOL);
 
@@ -43,7 +43,7 @@ fwrite($file, "echo \"Puede entrar a PHPMYADMIN para ver la estructura y canmbia
 
 fclose($file);
 
-header("Content-disposition: attachment; filename=script1.sh");
+header("Content-disposition: attachment; filename=script4.sh");
 readfile("script4.sh");
 
 }

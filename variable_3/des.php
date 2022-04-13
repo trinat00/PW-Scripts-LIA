@@ -4,15 +4,15 @@ $userpass=$_POST["userpass"];
 $bdname=$_POST["bdname"];
 $tlname=$_POST["tlname"];
 $var1=$_POST["var1"];
-$var1=$_POST["var2"];
+$var2=$_POST["var2"];
 $var3=$_POST["var3"];
 
 
-If (unlink('script1.sh')) 
+If (unlink('script3.sh')) 
 {
   // file was successfully deleted
  
-$file = fopen("script1.sh", "w");
+$file = fopen("script3.sh", "w");
 
 fwrite($file, "#!/bin/bash" . PHP_EOL);
 
@@ -42,7 +42,7 @@ fwrite($file, "echo \"Puede entrar a PHPMYADMIN para ver la estructura y canmbia
 
 fclose($file);
 
-header("Content-disposition: attachment; filename=script1.sh");
+header("Content-disposition: attachment; filename=script3.sh");
 readfile("script3.sh");
 
 }
