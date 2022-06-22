@@ -1,14 +1,25 @@
 #!/bin/bash
-echo " ██▀███   ██▓ ▄████▄   ▄▄▄       ██▀███  ▓█████▄  ▒█████       ▄████  ▒█████   ███▄ ▄███▓▓█████ ▒███████▒
-▓██ ▒ ██▒▓██▒▒██▀ ▀█  ▒████▄    ▓██ ▒ ██▒▒██▀ ██▌▒██▒  ██▒    ██▒ ▀█▒▒██▒  ██▒▓██▒▀█▀ ██▒▓█   ▀ ▒ ▒ ▒ ▄▀░
-▓██ ░▄█ ▒▒██▒▒▓█    ▄ ▒██  ▀█▄  ▓██ ░▄█ ▒░██   █▌▒██░  ██▒   ▒██░▄▄▄░▒██░  ██▒▓██    ▓██░▒███   ░ ▒ ▄▀▒░ 
-▒██▀▀█▄  ░██░▒▓▓▄ ▄██▒░██▄▄▄▄██ ▒██▀▀█▄  ░▓█▄   ▌▒██   ██░   ░▓█  ██▓▒██   ██░▒██    ▒██ ▒▓█  ▄   ▄▀▒   ░
-░██▓ ▒██▒░██░▒ ▓███▀ ░ ▓█   ▓██▒░██▓ ▒██▒░▒████▓ ░ ████▓▒░   ░▒▓███▀▒░ ████▓▒░▒██▒   ░██▒░▒████▒▒███████▒
-░ ▒▓ ░▒▓░░▓  ░ ░▒ ▒  ░ ▒▒   ▓▒█░░ ▒▓ ░▒▓░ ▒▒▓  ▒ ░ ▒░▒░▒░     ░▒   ▒ ░ ▒░▒░▒░ ░ ▒░   ░  ░░░ ▒░ ░░▒▒ ▓░▒░▒
-  ░▒ ░ ▒░ ▒ ░  ░  ▒     ▒   ▒▒ ░  ░▒ ░ ▒░ ░ ▒  ▒   ░ ▒ ▒░      ░   ░   ░ ▒ ▒░ ░  ░      ░ ░ ░  ░░░▒ ▒ ░ ▒
-  ░░   ░  ▒ ░░          ░   ▒     ░░   ░  ░ ░  ░ ░ ░ ░ ▒     ░ ░   ░ ░ ░ ░ ▒  ░      ░      ░   ░ ░ ░ ░ ░
-   ░      ░  ░ ░            ░  ░   ░        ░        ░ ░           ░     ░ ░         ░      ░  ░  ░ ░    
-             ░                            ░                                                     ░       "
+sudo apt install xdotool -y
+echo "Instalando xdotool"
+sleep 5
+xdotool key alt+F10
+blanco='\e[1;37m' 
+NC='\e[0m'
+echo -e "${blanco}
+ █████╗ ██╗   ██╗████████╗ ██████╗ ██╗      █████╗ ███╗   ███╗██████╗ 
+██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗██║     ██╔══██╗████╗ ████║██╔══██╗
+███████║██║   ██║   ██║   ██║   ██║██║     ███████║██╔████╔██║██████╔╝
+██╔══██║██║   ██║   ██║   ██║   ██║██║     ██╔══██║██║╚██╔╝██║██╔═══╝ 
+██║  ██║╚██████╔╝   ██║   ╚██████╔╝███████╗██║  ██║██║ ╚═╝ ██║██║     
+╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝                                                                                                                                                                  
+${NC}"
+echo "Creado carpetas necesarias"
+mkdir AutoLAMP
+sleep 5
+echo "Ubicado la carpeta de trabajo"
+sleep 5
+cd AutoLAMP
+sleep 5
 echo "Checando si los paquetes necesarios estan instalados..."
 dpkg -s docker-ce docker-ce-cli containerd.io curl gnupg lsb-release &> /dev/null
 if [ $? -ne 0 ]
@@ -38,7 +49,7 @@ if [ $? -ne 0 ]
             sudo docker pull mattrayner/lamp
             echo "Configurando imagen"
             sleep 5
-            sudo docker run -i -t --name autodoc -p "80:80" -p "3306:3306" -v ${PWD}/app:/app -v ${PWD}/mysql:/var/lib/mysql mattrayner/lamp:latest
+            sudo docker run -i -t --name autolamp -p "80:80" -p "3306:3306" -v ${PWD}/app:/app -v ${PWD}/mysql:/var/lib/mysql mattrayner/lamp:latest
         else
             echo    "Los paquetes estan instalados..."
             sleep 5
@@ -49,7 +60,7 @@ if [ $? -ne 0 ]
             sudo docker pull mattrayner/lamp
             echo "Configurando imagen"
             sleep 5
-            sudo docker run -i -t --name autodoc -p "80:80" -p "3306:3306" -v ${PWD}/app:/app -v ${PWD}/mysql:/var/lib/mysql mattrayner/lamp:latest
+            sudo docker run -i -t --name autolamp -p "80:80" -p "3306:3306" -v ${PWD}/app:/app -v ${PWD}/mysql:/var/lib/mysql mattrayner/lamp:latest
     fi
 
 
